@@ -1,0 +1,11 @@
+.all-books {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+
+  row-gap: 2.5rem;
+}
