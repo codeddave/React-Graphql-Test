@@ -12,8 +12,8 @@ const BookCard = ({ book }) => {
       <article className="book-details-container">
         <p className="book-title">{book.title}</p>
 
-        <p>{book.author}</p>
-        <p>{book.genre}</p>
+        <p className="small-text">{book.author}</p>
+        <p className="small-text">{book.genre}</p>
 
         <div className="book-info">
           <div className="test">
@@ -33,7 +33,11 @@ const BookCard = ({ book }) => {
           </div>
         </div>
 
-        <p>{book.price}</p>
+        <p className="book-price">
+          ${book.price} <span>{book.stock} copies available</span>
+        </p>
+
+        <div className="book-cart "></div>
       </article>
     </div>
   );
