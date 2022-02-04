@@ -13,7 +13,7 @@ nav {
   display: flex;
   align-items: center;
   div {
-    padding-right: 2rem;
+    margin-right: 2rem;
   }
 }
 
@@ -33,4 +33,10 @@ nav {
     border-left: 1px solid #dddddd;
     background-color: #f9f9fb;
   }
+}
+
+.book-wrapper {
+  background-color: #f9f9fb;
+  border-radius: 50%;
+  padding: 0.6rem;
 }
