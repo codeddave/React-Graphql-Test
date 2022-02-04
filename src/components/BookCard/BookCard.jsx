@@ -1,4 +1,7 @@
 import React from "react";
+import PeopleIcon from "../../assets/icons/people.svg";
+import LikeIcon from "../../assets/icons/heart.svg";
+
 import "./BookCard.scss";
 const BookCard = ({ book }) => {
   return (
@@ -13,14 +16,24 @@ const BookCard = ({ book }) => {
         <p>{book.genre}</p>
 
         <div className="book-info">
-          <div>
-            <p>{book.readers}</p>
-            <p>{book.likes}</p>
+          <div className="test">
+            <div>
+              <img src={PeopleIcon} alt="readers" />
+              <p>{book.readers}</p>
+            </div>
+
+            <div>
+              <img src={LikeIcon} alt="readers" />
+
+              <p>{book.likes}</p>
+            </div>
           </div>
-          <div>
+          <div className="book-rating">
             <p>Rating: {book.rating}</p>
           </div>
         </div>
+
+        <p>{book.price}</p>
       </article>
     </div>
   );

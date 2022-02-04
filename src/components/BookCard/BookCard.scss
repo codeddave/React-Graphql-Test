@@ -27,8 +27,8 @@
 
   .test {
     display: flex;
-
-    border-right: 1px solid black;
+    width: 4.5rem;
+    border-right: 1px solid #eeeeee;
     div {
       display: flex;
       flex-direction: column;
@@ -36,7 +36,6 @@
     }
   }
 
-  div:nth-child(2) {
-    padding-left: 0.5rem;
+  .book-rating {
   }
 }
