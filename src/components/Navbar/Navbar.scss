@@ -1,9 +1,14 @@
 nav {
   display: flex;
   justify-content: space-between;
+  padding: 1.6rem 2.5rem;
 }
 
 .logo-wrapper {
   background-color: black;
   padding: 1rem;
+}
+.logo-end {
+  display: flex;
+  align-items: center;
 }
