@@ -2,6 +2,8 @@ import React from "react";
 import PeopleIcon from "../../assets/icons/people.svg";
 import LikeIcon from "../../assets/icons/heart.svg";
 
+import CartIcon from "../../assets/icons/cart.svg";
+
 import "./BookCard.scss";
 const BookCard = ({ book }) => {
   return (
@@ -37,7 +39,10 @@ const BookCard = ({ book }) => {
           ${book.price} <span>{book.stock} copies available</span>
         </p>
 
-        <div className="book-cart "></div>
+        <div className="book-cart ">
+          <img src={CartIcon} alt="" />
+          <p>Add to Cart</p>
+        </div>
       </article>
     </div>
   );
