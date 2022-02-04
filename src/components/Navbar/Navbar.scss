@@ -2,6 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 1.6rem 2.5rem;
+  align-items: center;
 }
 
 .logo-wrapper {
@@ -11,4 +12,25 @@ nav {
 .logo-end {
   display: flex;
   align-items: center;
+  div {
+    padding-right: 2rem;
+  }
+}
+
+.search {
+  width: 30rem;
+  outline: none;
+  border: none;
+  padding: 0 1rem;
+}
+.search-box {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+
+  img {
+    padding: 0.4rem;
+    border-left: 1px solid gray;
+    background-color: #f9f9fb;
+  }
 }

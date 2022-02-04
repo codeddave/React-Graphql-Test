@@ -3,6 +3,7 @@ import Logo from "../../assets/icons/books.svg";
 import CartIcon from "../../assets/icons/cart.svg";
 
 import Brand from "../../assets/icons/brand-full.svg";
+import SearchIcon from "../../assets/icons/search.svg";
 
 import "./Navbar.scss";
 const Navbar = () => {
@@ -20,7 +21,14 @@ const Navbar = () => {
 
         <img src={Brand} alt="" srcset="" />
       </div>
-      <div></div>
+      <div className="search-box">
+        <input
+          className="search"
+          type="text"
+          placeholder="Search books, genres, authors, etc."
+        />
+        <img src={SearchIcon} alt="search" />
+      </div>
 
       <div className="logo-end">
         <div className="book-wrapper">
