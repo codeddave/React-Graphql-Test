@@ -40,7 +40,9 @@ const BookDetail = ({ book }) => {
         <h3>
           {data.book.title}: {data.book.subtitle}
         </h3>
-        <p>Elizabeth GIlbert</p>
+        {data.book.authors.map((author) => (
+          <p key={author.id}>{author.name}</p>
+        ))}
       </section>
     </div>
   );
