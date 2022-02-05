@@ -1,0 +1,31 @@
+.book-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding-left: 2.5rem;
+}
+
+.book-detail-info {
+  .book-detail-image-container {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 0px 0px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+    width: 243px;
+    height: 364.5px;
+  }
+  img {
+    width: 243px;
+    height: 364.5px;
+  }
+}
+
+.book-detail-copies {
+  padding-top: 4.6rem;
+  color: #65c100;
+  font-size: 0.875rem;
+}
+
+.book-detail-price {
+  font-size: 3rem;
+  font-weight: 300;
+}

@@ -25,10 +25,10 @@
 }
 
 .left-arrow {
-  background-color: rgb(196, 193, 193);
-  width: 20px;
-  opacity: 3;
+  background-color: rgb(221, 221, 221);
+  width: 30px;
+  opacity: 0.7;
   position: absolute;
-  z-index: 999;
+  z-index: -1;
   height: 100%;
 }
