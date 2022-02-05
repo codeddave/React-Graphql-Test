@@ -20,6 +20,7 @@ export const getBook = gql`
       available_copies
       full_description
       featured
+      number_of_purchases
       authors {
         name
         id
