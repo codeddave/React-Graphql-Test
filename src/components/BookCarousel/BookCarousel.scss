@@ -3,13 +3,15 @@
   margin: auto;
   width: 100% !important;
   position: relative;
-  border: 1px solid red;
+}
+.carousel-title {
+  padding: 0 4rem;
 }
 .carousel-image {
   height: 220px;
-  width: 330px;
-  object-fit: contain;
+  width: 300px;
   padding-bottom: 0.5rem;
+  padding: 0 3rem;
 }
 
 .set {
@@ -25,7 +27,7 @@
 .left-arrow {
   background-color: rgb(196, 193, 193);
   width: 20px;
-  opacity: 0.3;
+  opacity: 3;
   position: absolute;
   z-index: 999;
   height: 100%;
