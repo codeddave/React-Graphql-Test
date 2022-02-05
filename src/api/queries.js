@@ -24,6 +24,10 @@ export const getBook = gql`
         name
         id
       }
+      tags {
+        name
+        id
+      }
       publisher
       genres {
         name
