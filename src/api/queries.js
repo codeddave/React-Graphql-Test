@@ -14,6 +14,14 @@ export const getBook = gql`
     book(id: $id) {
       title
       image_url
+      rating
+      likes
+      price
+      available_copies
+      full_description
+      featured
+      genres
+      subtitle
     }
   }
 `;
