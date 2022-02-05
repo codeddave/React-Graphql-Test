@@ -1,11 +1,9 @@
 .carousel-container {
   height: 405px;
-
-  div {
-    -moz-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
-    -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
-    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
-  }
+  margin: auto;
+  width: 100% !important;
+  position: relative;
+  border: 1px solid red;
 }
 .carousel-image {
   height: 220px;
@@ -18,4 +16,17 @@
   img {
     margin-right: 6px;
   }
+}
+
+.full {
+  width: 100vw;
+}
+
+.left-arrow {
+  background-color: rgb(196, 193, 193);
+  width: 20px;
+  opacity: 0.3;
+  position: absolute;
+  z-index: 999;
+  height: 100%;
 }
