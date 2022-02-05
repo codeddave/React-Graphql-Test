@@ -2,10 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: auto;
-  width: 100%;
-  justify-content: center;
-  justify-items: center;
+  width: 100vw;
   align-items: center;
-
   row-gap: 2.5rem;
+}
+.all-books-title {
+  font-size: 0.875rem;
+}
+
+.all-books-container {
+  padding: 0 4rem;
+  margin: auto;
 }
