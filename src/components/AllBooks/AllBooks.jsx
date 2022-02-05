@@ -127,11 +127,15 @@ const AllBooks = () => {
   if (error) return <p>error occured {error.message}</p>;
   console.log(data);
   return (
-    <div className="all-books">
-      {test.map((book) => (
-        <BookCard book={book} />
-      ))}
-    </div>
+    <section className="all-books-container">
+      <h2 className="all-books-title">All Books</h2>
+      <div className="border-line" />
+      <div className="all-books">
+        {test.map((book) => (
+          <BookCard book={book} />
+        ))}
+      </div>
+    </section>
   );
 };
 
