@@ -20,7 +20,9 @@ export const getBook = gql`
       available_copies
       full_description
       featured
-      genres
+      authors {
+        name
+      }
       subtitle
     }
   }
