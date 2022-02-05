@@ -22,6 +22,7 @@ export const getBook = gql`
       featured
       authors {
         name
+        id
       }
       subtitle
     }
