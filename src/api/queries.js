@@ -8,3 +8,12 @@ export const getAllBooks = gql`
     }
   }
 `;
+
+export const getBook = gql`
+  query getBook($id: ID!) {
+    book(id: $id) {
+      title
+      image_url
+    }
+  }
+`;
