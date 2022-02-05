@@ -34,3 +34,28 @@
     font-size: 3rem;
   }
 }
+.book-detail-author {
+  padding-top: 1.25rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+.book-detail-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: flex-start;
+}
+
+.book-detail-genre {
+  display: inline;
+}
+.book-detail-tag {
+  display: inline-flex;
+  /*   flex-wrap: wrap;
+  word-wrap: break-word; */
+}
+
+.book-details-reader-wrapper {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}

@@ -2,7 +2,10 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { getBook } from "../../api/queries";
-import ImageOne from "../../assets/images/big-magic-cover_euc3rh.jpg";
+import PeopleIcon from "../../assets/icons/people.svg";
+import LikeIcon from "../../assets/icons/heart.svg";
+
+import CartIcon from "../../assets/icons/cart.svg";
 import "./BookDetail.scss";
 const BookDetail = ({ book }) => {
   const { id } = useParams();
@@ -41,8 +44,59 @@ const BookDetail = ({ book }) => {
           {data.book.title}: {data.book.subtitle}
         </h3>
         {data.book.authors.map((author) => (
-          <p key={author.id}>{author.name}</p>
+          <p className="book-detail-author" key={author.id}>
+            {author.name}
+          </p>
         ))}
+        <p>2016</p>
+        <div className="border-line" />
+
+        <section className="book-detail-details">
+          <div className="book-details-reader-wrapper">
+            <div>
+              <img src={PeopleIcon} alt="readers" />
+              <p>{data.book.number_of_purchases}</p>
+            </div>
+
+            <div>
+              <img src={LikeIcon} alt="likes" />
+
+              <p>{data.book.likes}</p>
+            </div>
+          </div>
+          <div>
+            <p>Ratings:</p>
+            <p></p>
+          </div>
+          <div>
+            <p>Genre:</p>
+            {data.book.genres.map((genre) => (
+              <>
+                <p className="book-detail-genre" key={genre.id}>
+                  {genre.name}
+                </p>
+                {","}{" "}
+              </>
+            ))}
+          </div>
+          <div>
+            <p>Tags:</p>
+            {data.book.tags.map((tag) => (
+              <>
+                <p className="book-detail-tag" key={tag.id}>
+                  {tag.name}
+                </p>
+                {","}{" "}
+              </>
+            ))}
+          </div>
+          <div>
+            <p>Publisher:</p>
+
+            <p>{data.book.publisher}</p>
+          </div>
+          <div>Released:</div>
+        </section>
       </section>
     </div>
   );
