@@ -24,6 +24,10 @@ export const getBook = gql`
         name
         id
       }
+      genres {
+        name
+        id
+      }
       subtitle
     }
   }
