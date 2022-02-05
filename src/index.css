@@ -16,3 +16,10 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
+
+.border-line {
+  color: red;
+  margin: 0.8rem 0 1.6rem 0;
+  border-top: 1px solid #eeeeee;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
