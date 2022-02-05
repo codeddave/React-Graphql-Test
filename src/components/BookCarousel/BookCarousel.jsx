@@ -1,7 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import ImageOne from "../../assets/images/the-effective-engineer-cover_bgj7u4.jpg";
+import ImageOne from "../../assets/images/big-magic-cover_euc3rh.jpg";
 import ImageTwo from "../../assets/images/built-to-last-cover_cb92oa.jpg";
 import ImageThree from "../../assets/images/the-lean-startup-cover_dmwrjj.jpg";
 import { Carousel } from "react-responsive-carousel";
@@ -16,7 +16,7 @@ const BookCarousel = () => {
   };
   return (
     <section>
-      <div className="carousel-title">
+      <div className="carousel-title-wrapper">
         <h2 className="all-books-title">Featured Books</h2>
         <div className="border-line" />
       </div>
