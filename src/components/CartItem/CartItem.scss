@@ -22,3 +22,15 @@
   font-weight: bold;
   font-size: 0.875rem;
 }
+.cart-count {
+  span {
+    border: 1px solid black;
+    padding: 0.4rem;
+  }
+}
+
+.testt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
