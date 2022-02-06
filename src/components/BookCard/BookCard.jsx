@@ -25,7 +25,7 @@ const BookCard = ({ book }) => {
             </div>
 
             <div>
-              <img src={LikeIcon} alt="readers" />
+              <img src={LikeIcon} alt="likes" />
 
               <p>{book.likes}</p>
             </div>
