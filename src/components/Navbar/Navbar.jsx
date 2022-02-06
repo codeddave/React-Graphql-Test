@@ -6,6 +6,7 @@ import Brand from "../../assets/icons/brand-full.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav>
@@ -19,7 +20,9 @@ const Navbar = () => {
           <p>A flimsy book company</p>
         </div> */}
 
-        <img src={Brand} alt="" srcset="" />
+        <Link to="/">
+          <img src={Brand} alt="" />
+        </Link>
       </div>
       <div className="search-box">
         <input
