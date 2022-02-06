@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Logo from "../../assets/icons/books.svg";
 import CartIcon from "../../assets/icons/cart.svg";
 
@@ -6,12 +6,23 @@ import Brand from "../../assets/icons/brand-full.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { ProductContext } from "../../context/cart";
+import Cart from "../Cart/Cart";
 const Navbar = () => {
+  const { handleCartModal, isCartModalOpen, closeCartModal } =
+    useContext(ProductContext);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    closeCartModal();
+  }, [location, closeCartModal]);
   return (
-    <nav>
-      <div>
-        {/*  <div className="logo-wrapper">
+    <section>
+      <nav>
+        <div>
+          {/*  <div className="logo-wrapper">
           <img src={Logo} alt="logo" />
         </div>
 
@@ -20,26 +31,28 @@ const Navbar = () => {
           <p>A flimsy book company</p>
         </div> */}
 
-        <Link to="/">
-          <img src={Brand} alt="" />
-        </Link>
-      </div>
-      <div className="search-box">
-        <input
-          className="search"
-          type="text"
-          placeholder="Search books, genres, authors, etc."
-        />
-        <img src={SearchIcon} alt="search" />
-      </div>
-
-      <div className="logo-end">
-        <div className="book-wrapper">
-          <img src={Logo} alt="logo" />
+          <Link to="/">
+            <img src={Brand} alt="" />
+          </Link>
         </div>
-        <img src={CartIcon} alt="cart" />
-      </div>
-    </nav>
+        <div className="search-box">
+          <input
+            className="search"
+            type="text"
+            placeholder="Search books, genres, authors, etc."
+          />
+          <img src={SearchIcon} alt="search" />
+        </div>
+
+        <div className="logo-end">
+          <div className="book-wrapper">
+            <img src={Logo} alt="logo" />
+          </div>
+          <img src={CartIcon} alt="cart" />
+        </div>
+      </nav>
+      {isCartModalOpen ? <Cart /> : null}
+    </section>
   );
 };
 
