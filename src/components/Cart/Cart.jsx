@@ -5,8 +5,11 @@ import CartIcon from "../../assets/icons/cart.svg";
 
 import BackIcon from "../../assets/icons/arrow.svg";
 import { ProductContext } from "../../context/cart";
+import { useCartData } from "../hooks/useCartData";
 const Cart = () => {
   const { closeCartModal } = useContext(ProductContext);
+  const { cartData } = useCartData();
+  console.log(cartData);
   return (
     <div className="cart-container">
       <div className="cart-nav">
@@ -22,8 +25,9 @@ const Cart = () => {
           <img src={CartIcon} alt="cart" />
         </div>
       </div>
-
-      <CartItem />
+      {cartData?.cart.map((cartItem) => (
+        <CartItem book={cartItem} />
+      ))}
     </div>
   );
 };

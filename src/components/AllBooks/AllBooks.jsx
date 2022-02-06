@@ -131,7 +131,7 @@ const AllBooks = () => {
       <h2 className="all-books-title">All Books</h2>
       <div className="border-line" />
       <div className="all-books">
-        {test.map((book) => (
+        {data.books.map((book) => (
           <BookCard book={book} />
         ))}
       </div>

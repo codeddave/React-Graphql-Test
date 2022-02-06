@@ -6,10 +6,11 @@ import CartIcon from "../../assets/icons/cart.svg";
 
 import "./BookCard.scss";
 const BookCard = ({ book }) => {
+  console.log(book);
   return (
     <div className="book-card-container">
       <div>
-        <img src={book.image} alt="book" className="book-image" />
+        <img src={book.image_url} alt="book" className="book-image" />
       </div>
       <article className="book-details-container">
         <p className="book-title">{book.title}</p>
@@ -21,7 +22,7 @@ const BookCard = ({ book }) => {
           <div className="test">
             <div>
               <img src={PeopleIcon} alt="readers" />
-              <p>{book.readers}</p>
+              <p>{book.number_of_purchases}</p>
             </div>
 
             <div>
