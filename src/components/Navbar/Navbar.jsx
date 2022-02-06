@@ -19,7 +19,7 @@ const Navbar = () => {
     closeCartModal();
   }, [location, closeCartModal]);
   return (
-    <section>
+    <section className="nav-container">
       <nav>
         <div>
           {/*  <div className="logo-wrapper">
@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="book-wrapper">
             <img src={Logo} alt="logo" />
           </div>
-          <img src={CartIcon} alt="cart" />
+          <img src={CartIcon} onClick={handleCartModal} alt="cart" />
         </div>
       </nav>
       {isCartModalOpen ? <Cart /> : null}
