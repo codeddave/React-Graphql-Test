@@ -59,3 +59,22 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
 }
+
+.book-detail-cart-icon {
+}
+
+.book-detail-add-to-cart {
+  height: 70px;
+  width: 243px;
+  color: white;
+  position: relative;
+  background-color: black;
+
+  img {
+    width: 28px;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    height: 19px;
+  }
+}
