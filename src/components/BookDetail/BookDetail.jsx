@@ -5,7 +5,7 @@ import { getBook } from "../../api/queries";
 import PeopleIcon from "../../assets/icons/people.svg";
 import LikeIcon from "../../assets/icons/heart.svg";
 
-import CartIcon from "../../assets/icons/cart.svg";
+import CartIcon from "../../assets/icons/cartt.svg";
 import "./BookDetail.scss";
 const BookDetail = ({ book }) => {
   const { id } = useParams();
@@ -21,10 +21,7 @@ const BookDetail = ({ book }) => {
   console.log(data);
   return (
     <div className="book-detail-container">
-      <section
-        style={{ border: "1px solid black" }}
-        className="book-detail-info"
-      >
+      <section className="book-detail-info">
         <div className="book-detail-image-container">
           <img src={data.book.image_url} alt="book" />
         </div>
@@ -34,12 +31,13 @@ const BookDetail = ({ book }) => {
         </p>
         <p className="book-detail-price">${data.book.price}</p>
 
-        <button>Add to Cart</button>
+        <button className="book-detail-add-to-cart">
+          {" "}
+          <img className="book-detail-cart-icon" src={CartIcon} alt="" />
+          <span> Add to Cart</span>
+        </button>
       </section>
-      <section
-        style={{ border: "1px solid black" }}
-        className="book-detail-description"
-      >
+      <section className="book-detail-description">
         <h3>
           {data.book.title}: {data.book.subtitle}
         </h3>
@@ -49,6 +47,7 @@ const BookDetail = ({ book }) => {
           </p>
         ))}
         <p>2016</p>
+
         <div className="border-line" />
 
         <section className="book-detail-details">
@@ -96,6 +95,11 @@ const BookDetail = ({ book }) => {
             <p>{data.book.publisher}</p>
           </div>
           <div>Released:</div>
+        </section>
+        <div className="border-line" />
+
+        <section>
+          <p>{data.book.full_description}</p>
         </section>
       </section>
     </div>
