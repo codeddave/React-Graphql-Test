@@ -9,6 +9,7 @@ import "./Navbar.scss";
 import { Link, useLocation } from "react-router-dom";
 import { ProductContext } from "../../context/cart";
 import Cart from "../Cart/Cart";
+import ClickAwayListener from "react-click-away-listener";
 const Navbar = () => {
   const { handleCartModal, isCartModalOpen, closeCartModal } =
     useContext(ProductContext);
@@ -48,10 +49,23 @@ const Navbar = () => {
           <div className="book-wrapper">
             <img src={Logo} alt="logo" />
           </div>
-          <img src={CartIcon} onClick={handleCartModal} alt="cart" />
+          <img
+            src={CartIcon}
+            onClick={handleCartModal}
+            alt="cart"
+            className="nav-cart-icon"
+          />
         </div>
       </nav>
-      {isCartModalOpen ? <Cart /> : null}
+      <div>
+        {isCartModalOpen ? (
+          <ClickAwayListener onClickAway={closeCartModal}>
+            <div>
+              <Cart />
+            </div>
+          </ClickAwayListener>
+        ) : null}
+      </div>
     </section>
   );
 };
