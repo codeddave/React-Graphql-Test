@@ -12,7 +12,8 @@ class ProductProvider extends Component {
     cartTotal: 0,
   };
   componentDidMount() {
-    // this.setNewProducts();
+    this.setCart();
+    console.log(this.state.cart);
   }
   // To Create a copy of the products coming from data.js
   /*  setNewProducts = () => {
@@ -31,7 +32,17 @@ class ProductProvider extends Component {
     const product = this.state.products.find((item) => item.id === id);
     return product;
   };
+  setCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cartData"))?.cart;
+    const cartLength = JSON.parse(localStorage.getItem("cartData"))?.cart
+      .length;
 
+    this.setState(() => {
+      return {
+        cart: cart && cartLength ? cart : [],
+      };
+    });
+  };
   checkCart = (product) => {
     const existingCartItem = this.state.cart.find(
       (cartItem) => cartItem.id === product.id
@@ -55,6 +66,7 @@ class ProductProvider extends Component {
   };
   addToCart = (book) => {
     //const cartt = this.checkCart(product);
+    console.log(this.state.cart);
     const existingCartItem = this.state.cart.find(
       (cartItem) => cartItem.id === book.id
     );
