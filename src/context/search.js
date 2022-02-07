@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchContext = React.createContext(undefined);
+export const SearchContext = React.createContext(undefined);
 
 export const SearchProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
