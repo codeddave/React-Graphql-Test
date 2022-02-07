@@ -33,11 +33,11 @@
 .book-info {
   padding-top: 0.9rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1.6fr;
   border-right-width: 1px solid black;
   border-left-width: 0px;
   font-size: 0.75rem;
-  .test {
+  .testtt {
     display: flex;
     width: 4rem;
     border-right: 1px solid #eeeeee;
@@ -70,6 +70,7 @@
   display: flex;
   align-items: center;
   padding-top: 0.7rem;
+  cursor: pointer;
   p {
     font-weight: bold;
     font-size: 0.75rem;
