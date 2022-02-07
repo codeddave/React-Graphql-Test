@@ -3,14 +3,23 @@ import React from "react";
 import BookCard from "../BookCard/BookCard";
 import "./AllBooks.scss";
 import { useQuery } from "@apollo/client";
-import { getAllBooks } from "../../api/queries";
+import { getAllBooks, getBooksByFilter } from "../../api/queries";
 
 const AllBooks = () => {
   const { data, loading, error } = useQuery(getAllBooks);
+  const {
+    data: datas,
+    loading: loadings,
+    error: errors,
+  } = useQuery(getBooksByFilter, {
+    variables: {
+      filter: "big",
+    },
+  });
 
   if (loading) return <p>loading...</p>;
   if (error) return <p>error occured {error.message}</p>;
-  //console.log(data);
+  console.log(datas);
   return (
     <section className="all-books-container">
       <h2 className="all-books-title">All Books</h2>
