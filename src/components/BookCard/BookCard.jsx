@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import PeopleIcon from "../../assets/icons/people.svg";
 import LikeIcon from "../../assets/icons/heart.svg";
 
 import CartIcon from "../../assets/icons/cart.svg";
 
 import "./BookCard.scss";
+import { ProductContext } from "../../context/cart";
+import { useNavigate } from "react-router-dom";
 const BookCard = ({ book }) => {
-  console.log(book);
+  //console.log(book);
+  const { addToCart } = useContext(ProductContext);
+  const navigate = useNavigate();
+
   return (
-    <div className="book-card-container">
+    <div
+      className="book-card-container"
+      onClick={() => navigate(`/${book.id}`)}
+    >
       <div>
         <img src={book.image_url} alt="book" className="book-image" />
       </div>
@@ -40,7 +48,12 @@ const BookCard = ({ book }) => {
           ${book.price} <span>{book.stock} copies available</span>
         </p>
 
-        <div className="book-cart ">
+        <div
+          className="book-cart "
+          onClick={() => {
+            addToCart(book);
+          }}
+        >
           <img src={CartIcon} alt="" />
           <p>Add to Cart</p>
         </div>
