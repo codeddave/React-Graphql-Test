@@ -3,15 +3,16 @@
   margin: auto;
   width: 100% !important;
   position: relative;
+  //border: 1px solid black;
 }
 .carousel-title-wrapper {
   padding: 1.69rem 4rem 0 4rem;
 }
 .carousel-image {
   height: 220px;
-  width: 300px;
+  width: 80%;
   padding-bottom: 0.5rem;
-  padding: 0 3rem;
+  // object-fit: contain;
 }
 
 .set {
@@ -24,11 +25,23 @@
   width: 100vw;
 }
 
-.left-arrow {
-  background-color: rgb(221, 221, 221);
+.prev-arrow {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 248, 250, 0.8) 0%,
+    #f8f8fa 51.36%,
+    rgba(248, 248, 250, 0.8) 100%
+  );
   width: 30px;
-  opacity: 0.7;
+  opacity: 0.8;
   position: absolute;
-  z-index: -1;
+  top: 0;
+  z-index: 1;
   height: 100%;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+  }
 }
