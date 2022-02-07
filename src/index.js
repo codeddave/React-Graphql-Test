@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { ProductProvider } from "./context/cart";
+import { SearchProvider } from "./context/search";
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,
@@ -15,7 +16,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <ProductProvider>
-        <App />
+        <SearchProvider>
+          <App />
+        </SearchProvider>
       </ProductProvider>
     </ApolloProvider>
   </React.StrictMode>,
