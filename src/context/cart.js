@@ -74,6 +74,7 @@ class ProductProvider extends Component {
       return {
         ...book,
         count: 1,
+        total: book.price,
       };
     };
     const cartt = item();
