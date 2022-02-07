@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import PeopleIcon from "../../assets/icons/people.svg";
 import LikeIcon from "../../assets/icons/heart.svg";
+import FullStar from "../../assets/icons/full-star.svg";
+import EmptyStar from "../../assets/icons/empty-star.svg";
 
 import CartIcon from "../../assets/icons/cart.svg";
+import Rating from "react-rating";
 
 import "./BookCard.scss";
 import { ProductContext } from "../../context/cart";
 import { useNavigate } from "react-router-dom";
+
 const BookCard = ({ book }) => {
   //console.log(book);
   const { addToCart } = useContext(ProductContext);
@@ -27,7 +31,7 @@ const BookCard = ({ book }) => {
         <p className="small-text">{book.genre}</p>
 
         <div className="book-info">
-          <div className="test">
+          <div className="testtt">
             <div>
               <img src={PeopleIcon} alt="readers" />
               <p>{book.number_of_purchases}</p>
@@ -41,6 +45,16 @@ const BookCard = ({ book }) => {
           </div>
           <div className="book-rating">
             <p>Rating: {book.rating}</p>
+            <p>
+              <Rating
+                //onChange={onChange}
+                stop={5}
+                readonly
+                initialRating={book.rating}
+                emptySymbol={<img src={EmptyStar} alt="dvd" />}
+                fullSymbol={<img src={FullStar} alt="dkjcb" />}
+              />
+            </p>
           </div>
         </div>
 
