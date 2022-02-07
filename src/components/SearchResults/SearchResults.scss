@@ -1,0 +1,16 @@
+.search-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  width: 100vw;
+  align-items: center;
+  row-gap: 2.5rem;
+}
+.search-results-title {
+  font-size: 0.875rem;
+}
+
+.search-results-container {
+  padding: 0 4rem;
+  margin: auto;
+}
