@@ -10,9 +10,16 @@ import { Link, useLocation } from "react-router-dom";
 import { ProductContext } from "../../context/cart";
 import Cart from "../Cart/Cart";
 import ClickAwayListener from "react-click-away-listener";
+import { CSSTransition } from "react-transition-group";
+import { SearchContext } from "../../context/search";
+
 const Navbar = () => {
   const { handleCartModal, isCartModalOpen, closeCartModal } =
     useContext(ProductContext);
+  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const handleBookSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   const location = useLocation();
 
@@ -39,6 +46,8 @@ const Navbar = () => {
         <div className="search-box">
           <input
             className="search"
+            value={searchQuery}
+            onChange={handleBookSearch}
             type="text"
             placeholder="Search books, genres, authors, etc."
           />
@@ -59,11 +68,19 @@ const Navbar = () => {
       </nav>
       <div>
         {isCartModalOpen ? (
-          <ClickAwayListener onClickAway={closeCartModal}>
-            <div>
-              <Cart />
-            </div>
-          </ClickAwayListener>
+          <CSSTransition
+            in={isCartModalOpen}
+            timeout={5000}
+            classNames="slideInRight"
+            appear={true}
+            unmountOnExit
+          >
+            <ClickAwayListener onClickAway={closeCartModal}>
+              <div>
+                <Cart />
+              </div>
+            </ClickAwayListener>
+          </CSSTransition>
         ) : null}
       </div>
     </section>
