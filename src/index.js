@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ProductProvider } from "./context/cart";
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,
@@ -13,7 +14,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <ProductProvider>
+        <App />
+      </ProductProvider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
