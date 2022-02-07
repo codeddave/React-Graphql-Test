@@ -1,27 +1,44 @@
-import React from "react";
+import React, { useContext } from "react";
 import ImageOne from "../../assets/images/the-effective-engineer-cover_bgj7u4.jpg";
 import ImageTwo from "../../assets/images/built-to-last-cover_cb92oa.jpg";
 import ImageThree from "../../assets/images/the-lean-startup-cover_dmwrjj.jpg";
 import "./CartItem.scss";
-const CartItem = () => {
+import { ProductContext } from "../../context/cart";
+const CartItem = ({ book }) => {
+  console.log(book, "jhfjhvjhv");
+
+  const { increment, decrement } = useContext(ProductContext);
+
   return (
     <section className="book-cart-ss">
       <div className="book-cart-container">
         <div className="book-cart-details-wrapper">
-          <img src={ImageOne} alt="book" />
+          <img src={book.image_url} alt="book" />
 
           <div className="book-cart-details ">
-            <p className="book-cart-title">The Effective Engineer</p>
-            <p>Edmund Lau</p>
+            <p className="book-cart-title">{book.title}</p>
+            <p>{book.author}</p>
 
             <p>Remove</p>
           </div>
         </div>
 
-        <div>
-          <p>$29.99</p>
+        <div className="testt">
+          <p>${book.price}</p>
 
-          <p>$59.9</p>
+          <div className="cart-count">
+            <span onClick={() => decrement(book.id)}>-</span>
+            <span>{book.count}</span>
+            <span
+              onClick={() => {
+                increment(book.id);
+              }}
+            >
+              +
+            </span>
+          </div>
+
+          <p>${book.total}</p>
         </div>
       </div>
       <div className="border-line" />
