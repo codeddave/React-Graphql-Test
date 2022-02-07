@@ -17,3 +17,47 @@ body {
   border-top: 1px solid #eeeeee;
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
+
+.slide-in-left-enter {
+  transform: translateX(100%);
+}
+
+.slide-in-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.slide-in-left-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-in-left-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 200ms;
+}
+
+.slideInRight-enter {
+  transform: translate3d(100%, 0, 0);
+  visibility: visible;
+}
+.slideInRight-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: opacity 400ms, transform 400ms ease-in;
+}
+.slideInRight-exit {
+  opacity: 1;
+}
+.slideInRight-exit-active {
+  transform: translate3d(100%, 0, 0);
+  transition: opacity 400ms, transform 400ms ease-in;
+}
+.slideInRight-appear {
+  opacity: 0.01;
+}
+.slideInRight-appear-active {
+  opacity: 1;
+  transition: all 400ms ease-out;
+}
