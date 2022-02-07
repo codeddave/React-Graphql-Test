@@ -25,9 +25,8 @@ const Cart = () => {
           <img src={CartIcon} alt="cart" />
         </div>
       </div>
-      {cartData?.cart.map((cartItem) => (
-        <CartItem book={cartItem} />
-      ))}
+      {cartData &&
+        cartData?.cart.map((cartItem) => <CartItem book={cartItem} />)}
     </div>
   );
 };
