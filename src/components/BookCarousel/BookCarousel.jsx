@@ -72,12 +72,15 @@ const BookCarousel = () => {
           {data?.books.map((book) => (
             <div key={book.id} className="carousel-image-container">
               <div className="image-hover">
-                <p>{`${
-                  book.available_copies > 0 ? "available" : "not available"
+                <p className="available">{`${
+                  book.available_copies > 0 ? "Available" : "Not available"
                 }`}</p>
 
-                <p>{book.title}</p>
-                <p>{book.author}</p>
+                <p className="title">{book.title}</p>
+                <p>{book.authors[0].name}</p>
+
+                <p>Genre</p>
+                <p>{book.genres[0].name}</p>
 
                 <div className="image-hover-div">
                   <div className="details">
