@@ -7,7 +7,7 @@ import BookCard from "../BookCard/BookCard";
 
 import "./SearchResults.scss";
 const SearchResults = () => {
-  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { searchQuery } = useContext(SearchContext);
 
   const { data, loading, error } = useQuery(getBooksByFilter, {
     variables: {
