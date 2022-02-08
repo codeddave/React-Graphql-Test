@@ -52,17 +52,18 @@ const BookDetail = ({ book }) => {
           <div className="book-detail-image-container">
             <img src={data.book.image_url} alt="book" />
           </div>
+          <div className="book-detail-wrap">
+            <p className="book-detail-copies">
+              {data.book.available_copies} copies available
+            </p>
+            <p className="book-detail-price">${data.book.price}</p>
 
-          <p className="book-detail-copies">
-            {data.book.available_copies} copies available
-          </p>
-          <p className="book-detail-price">${data.book.price}</p>
-
-          <button className="book-detail-add-to-cart" onClick={addBookToCart}>
-            {" "}
-            <img className="book-detail-cart-icon" src={CartIcon} alt="" />
-            <span> Add to Cart</span>
-          </button>
+            <button className="book-detail-add-to-cart" onClick={addBookToCart}>
+              {" "}
+              <img className="book-detail-cart-icon" src={CartIcon} alt="" />
+              <span> Add to Cart</span>
+            </button>
+          </div>
         </section>
         <section className="book-detail-description">
           <h3>
@@ -134,7 +135,7 @@ const BookDetail = ({ book }) => {
           </section>
           <div className="border-line" />
 
-          <section>
+          <section className="book-detail-description">
             <p>{data.book.full_description}</p>
           </section>
         </section>
