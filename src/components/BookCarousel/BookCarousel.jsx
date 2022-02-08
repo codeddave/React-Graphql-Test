@@ -12,6 +12,8 @@ import "./BookCarousel.scss";
 import Slider from "react-slick";
 import { useQuery } from "@apollo/client";
 import { getFeaturedBooks } from "../../api/queries";
+import { useNavigate } from "react-router-dom";
+
 const PrevArrow = (props) => {
   const { onClick } = props;
   return (
@@ -29,6 +31,8 @@ const NextArrow = (props) => {
   );
 };
 const BookCarousel = () => {
+  const navigate = useNavigate();
+
   const { data } = useQuery(getFeaturedBooks);
   const settings = {
     slidesPerRow: 6,
@@ -70,7 +74,11 @@ const BookCarousel = () => {
       <section className="carousel-container">
         <Slider {...settings} classNam="full">
           {data?.books.map((book) => (
-            <div key={book.id} className="carousel-image-container">
+            <div
+              key={book.id}
+              className="carousel-image-container"
+              onClick={() => navigate(`/${book.id}`)}
+            >
               <div className="image-hover">
                 <p className="available">{`${
                   book.available_copies > 0 ? "Available" : "Not available"
