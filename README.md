@@ -18,7 +18,7 @@ Responsive design of the website - as close to the real website as possible.
 Cart functionality (Adding books to cart, increasing and descreasing quantity, evaluation of the total).
 
 
-## Possible improvement:  
+## Possible improvements:  
 Leverage custom hook to abstract some redundant pieces of code and improve modularity. 
 Micro interactions to improve user experience
 
