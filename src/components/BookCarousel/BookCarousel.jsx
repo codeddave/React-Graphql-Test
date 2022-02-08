@@ -10,6 +10,8 @@ import NextIcon from "../../assets/icons/next.svg";
 import { Carousel } from "react-responsive-carousel";
 import "./BookCarousel.scss";
 import Slider from "react-slick";
+import { useQuery } from "@apollo/client";
+import { getFeaturedBooks } from "../../api/queries";
 const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
@@ -27,11 +29,34 @@ const NextArrow = (props) => {
   );
 };
 const BookCarousel = () => {
+  const { data, loading, error } = useQuery(getFeaturedBooks);
   const settings = {
-    slidesPerRow: 8,
+    slidesPerRow: 6,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesPerRow: 5,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesPerRow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesPerRow: 2,
+        },
+      },
+    ],
     dots: true,
     infinite: true,
-    speed: 1000,
+    autoPlay: true,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
@@ -44,36 +69,11 @@ const BookCarousel = () => {
 
       <section className="carousel-container">
         <Slider {...settings} classNam="full">
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
-          <div>
-            <img src={ImageThree} alt="book22" className="carousel-image" />
-          </div>
+          {data?.books.map((book) => (
+            <div className="carousel-image-container">
+              <img src={book.image_url} alt={book.title} />
+            </div>
+          ))}
         </Slider>
       </section>
     </section>
