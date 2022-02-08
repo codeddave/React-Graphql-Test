@@ -28,7 +28,7 @@ const SearchResults = () => {
       <div className="border-line" />
       <div className="search-results">
         {data.books.map((book) => (
-          <BookCard book={book} />
+          <BookCard key={book.id} book={book} />
         ))}
       </div>
     </section>
