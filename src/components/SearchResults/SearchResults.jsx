@@ -1,8 +1,10 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext } from "react";
+import { TailSpin } from "react-loader-spinner";
 import { getBooksByFilter } from "../../api/queries";
 import { SearchContext } from "../../context/search";
 import BookCard from "../BookCard/BookCard";
+
 import "./SearchResults.scss";
 const SearchResults = () => {
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
@@ -12,7 +14,12 @@ const SearchResults = () => {
       filter: searchQuery,
     },
   });
-  if (loading || !data) return <p>Loading</p>;
+  if (loading || !data)
+    return (
+      <div className="loader">
+        <TailSpin type="TailSpin" color="#0f4a7b" />
+      </div>
+    );
   return (
     <section className="search-results-container">
       <h2 className="search-results-title">

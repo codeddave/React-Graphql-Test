@@ -3,8 +3,8 @@ import React, { useContext, useState } from "react";
 import BookCard from "../BookCard/BookCard";
 import "./AllBooks.scss";
 import { useQuery } from "@apollo/client";
-import { getAllBooks, getBooksByFilter } from "../../api/queries";
-import { SearchContext } from "../../context/search";
+import { getAllBooks } from "../../api/queries";
+
 import { TailSpin } from "react-loader-spinner";
 
 const AllBooks = () => {
