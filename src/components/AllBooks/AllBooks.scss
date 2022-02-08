@@ -2,9 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: auto;
+  overflow-x: hidden;
   width: 100vw;
   align-items: center;
   row-gap: 2.5rem;
+  column-gap: 1rem;
 }
 .all-books-title {
   font-size: 0.875rem;
@@ -13,4 +15,23 @@
 .all-books-container {
   padding: 0 4rem;
   margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .all-books {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .all-books-container {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .all-books {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
 }
