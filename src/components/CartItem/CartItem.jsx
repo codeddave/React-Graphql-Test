@@ -15,9 +15,9 @@ const CartItem = ({ book }) => {
 
           <div className="book-cart-details ">
             <p className="book-cart-title">{book.title}</p>
-            <p>{book.author}</p>
+            <p className="book-cart-author">{book.authors[0].name}</p>
 
-            <p>Remove</p>
+            <button className="book-cart-remove-buttom">Remove</button>
           </div>
         </div>
 
