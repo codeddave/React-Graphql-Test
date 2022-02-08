@@ -7,7 +7,6 @@ import PeopleIcon from "../../assets/icons/dd.svg";
 import LikeIcon from "../../assets/icons/df.svg";
 import FullStar from "../../assets/icons/full-star.svg";
 import EmptyStar from "../../assets/icons/empty-star.svg";
-
 import Rating from "react-rating";
 import "./BookCarousel.scss";
 import Slider from "react-slick";
@@ -94,7 +93,7 @@ const BookCarousel = () => {
                   </div>
 
                   <div className="rating">
-                    <p>Ratingsdwvev: </p>
+                    <p>Ratings: {book.rating} </p>
                     <p style={{ zIndex: "888" }}>
                       <Rating
                         //onChange={onChange}
