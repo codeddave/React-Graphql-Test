@@ -26,7 +26,9 @@ const Cart = () => {
         </div>
       </div>
       {cartData &&
-        cartData?.cart.map((cartItem) => <CartItem book={cartItem} />)}
+        cartData?.cart.map((cartItem) => (
+          <CartItem key={cartItem.id} book={cartItem} />
+        ))}
     </div>
   );
 };

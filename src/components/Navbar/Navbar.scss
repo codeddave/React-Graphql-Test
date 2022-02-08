@@ -1,6 +1,7 @@
 .nav-container {
   position: relative;
   width: 100%;
+  display: flex;
 }
 nav {
   display: flex;
@@ -8,6 +9,7 @@ nav {
   padding: 1.6rem 2.5rem;
   align-items: center;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .logo-wrapper {
@@ -23,12 +25,14 @@ nav {
 }
 
 .search {
-  width: 30rem;
+  width: 100%;
   outline: none;
   border: none;
   padding: 0 1rem;
 }
 .search-box {
+  width: 30rem;
+
   border: 1px solid #dddddd;
   display: flex;
   align-items: center;
@@ -38,6 +42,13 @@ nav {
     border-left: 1px solid #dddddd;
     background-color: #f9f9fb;
   }
+}
+
+.brand-full {
+  display: block;
+}
+.brand-lite {
+  display: none;
 }
 
 .book-wrapper {
@@ -68,4 +79,22 @@ nav {
   transform: translateX(100%);
   opacity: 0;
   transition: all 200ms;
+}
+
+@media screen and (max-width: 480px) {
+  .brand-full {
+    display: none;
+  }
+
+  .brand-lite {
+    display: block;
+  }
+  nav {
+    padding: 1.6rem 0.3rem;
+  }
+  .logo-end {
+    div {
+      margin-right: 0.5rem;
+    }
+  }
 }

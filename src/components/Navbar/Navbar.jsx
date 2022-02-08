@@ -3,6 +3,8 @@ import Logo from "../../assets/icons/books.svg";
 import CartIcon from "../../assets/icons/cart.svg";
 
 import Brand from "../../assets/icons/brand-full.svg";
+import BrandLite from "../../assets/icons/brand-lite.svg";
+
 import SearchIcon from "../../assets/icons/search.svg";
 
 import "./Navbar.scss";
@@ -40,7 +42,11 @@ const Navbar = () => {
         </div> */}
 
           <Link to="/">
-            <img src={Brand} alt="" />
+            <img src={Brand} alt="" className="brand-full" />
+          </Link>
+
+          <Link to="/">
+            <img src={BrandLite} alt="" className="brand-lite" />
           </Link>
         </div>
         <div className="search-box">
