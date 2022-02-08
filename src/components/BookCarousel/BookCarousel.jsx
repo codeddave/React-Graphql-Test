@@ -79,7 +79,7 @@ const BookCarousel = () => {
                 <p className="title">{book.title}</p>
                 <p>{book.authors[0].name}</p>
 
-                <p>Genre</p>
+                <p className="sub-title">Genre</p>
                 <p>{book.genres[0].name}</p>
 
                 <div className="image-hover-div">

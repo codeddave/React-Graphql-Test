@@ -40,6 +40,7 @@
   opacity: 0.8;
   color: white;
   display: none;
+  font-size: 0.75rem;
 
   .available {
     color: #65c100;
@@ -50,8 +51,12 @@
     font-weight: bold;
     padding-top: 1.2rem;
     font-size: 1.125rem;
+    padding-bottom: 0.5rem;
   }
-
+  .sub-title {
+    font-weight: bold;
+    padding-top: 1.125rem;
+  }
   div {
     color: white;
   }
