@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getBook } from "../../api/queries";
 import PeopleIcon from "../../assets/icons/people.svg";
@@ -8,16 +8,32 @@ import BackIcon from "../../assets/icons/arrow.svg";
 
 import CartIcon from "../../assets/icons/cartt.svg";
 import "./BookDetail.scss";
+import { TailSpin } from "react-loader-spinner";
+import Rating from "react-rating";
+
+import FullStar from "../../assets/icons/full-star.svg";
+import EmptyStar from "../../assets/icons/empty-star.svg";
+import { ProductContext } from "../../context/cart";
+
 const BookDetail = ({ book }) => {
   const { id } = useParams();
-
+  const { addToCart } = useContext(ProductContext);
   const { error, data, loading } = useQuery(getBook, {
     variables: {
       id,
     },
   });
 
-  if (loading) return <p>loading...</p>;
+  const addBookToCart = () => {
+    addToCart(data.book);
+  };
+
+  if (loading)
+    return (
+      <div className="loader">
+        <TailSpin type="TailSpin" color="#0f4a7b" />
+      </div>
+    );
   if (error) return <p>error occured {error.message}</p>;
   //console.log(data);
   return (
@@ -42,7 +58,7 @@ const BookDetail = ({ book }) => {
           </p>
           <p className="book-detail-price">${data.book.price}</p>
 
-          <button className="book-detail-add-to-cart">
+          <button className="book-detail-add-to-cart" onClick={addBookToCart}>
             {" "}
             <img className="book-detail-cart-icon" src={CartIcon} alt="" />
             <span> Add to Cart</span>
@@ -76,7 +92,16 @@ const BookDetail = ({ book }) => {
             </div>
             <div>
               <p>Ratings:</p>
-              <p></p>
+              <p>
+                <Rating
+                  //onChange={onChange}
+                  stop={5}
+                  readonly
+                  initialRating={data.book.rating}
+                  emptySymbol={<img src={EmptyStar} alt="dvd" />}
+                  fullSymbol={<img src={FullStar} alt="dkjcb" />}
+                />
+              </p>
             </div>
             <div>
               <p>Genre:</p>
