@@ -59,18 +59,19 @@ const BookCard = ({ book }) => {
         </div>
 
         <p className="book-price">
-          ${book.price} <span>{book.stock} copies available</span>
+          ${book.price} <span>{book.available_copies} copies available</span>
         </p>
-
-        <div
-          className="book-cart "
-          onClick={() => {
-            addToCart(book);
-          }}
-        >
-          <img src={CartIcon} alt="" />
-          <p>Add to Cart</p>
-        </div>
+        {book.available_copies > 0 ? (
+          <div
+            className="book-cart "
+            onClick={() => {
+              addToCart(book);
+            }}
+          >
+            <img src={CartIcon} alt="" />
+            <p>Add to Cart</p>
+          </div>
+        ) : null}
       </article>
     </div>
   );
