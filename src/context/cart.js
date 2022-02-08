@@ -13,7 +13,6 @@ class ProductProvider extends Component {
   };
   componentDidMount() {
     this.setCart();
-    console.log(this.state.cart);
   }
   // To Create a copy of the products coming from data.js
   /*  setNewProducts = () => {
@@ -102,31 +101,7 @@ class ProductProvider extends Component {
       }
     );
   };
-  openModal = (id) => {
-    const product = this.getItem(id);
-    this.setState(() => {
-      return { modalProduct: product, modalOpen: true };
-    });
-  };
-  handleCartModal = () => {
-    this.setState((prevState) => {
-      return {
-        isCartModalOpen: !prevState.isCartModalOpen,
-      };
-    });
-  };
-  closeCartModal = () => {
-    this.setState(() => {
-      return {
-        isCartModalOpen: false,
-      };
-    });
-  };
-  closeModal = (id) => {
-    this.setState(() => {
-      return { modalOpen: false };
-    });
-  };
+
   increment = (id) => {
     const existingCartItem = this.state.cart.find(
       (cartItem) => cartItem.id === id
@@ -164,36 +139,15 @@ class ProductProvider extends Component {
     );
   };
   decrement = (id) => {
-    /*   let tempCart = [...this.state.cart];
-    const selectedProduct = tempCart.find((item) => item.id === id);
-    const index = tempCart.indexOf(selectedProduct);
-    const product = tempCart[index];
-    product.count = product.count - 1;
-
-    if (product.count === 0) {
-      this.removeItem(id);
-    } else {
-      product.total = product.count * product.price;
-      this.setState(
-        () => {
-          return { cart: [...tempCart] };
-        },
-        () => {
-          this.addTotals();
-        }
-      );
-    } */
     const existingCartItem = this.state.cart.find(
       (cartItem) => cartItem.id === id
     );
-    console.log(existingCartItem);
     const item = () => {
       if (existingCartItem) {
-        const test = this.state.cart.filter((cartItem) => cartItem.count > 1);
-        alert("here");
-        if (test.length === this.state.cart.length) {
-          return this.state.cart.map((cartItem) =>
-            cartItem.id === existingCartItem.id && cartItem.count > 1
+        return this.state.cart
+          .filter((cartItem) => cartItem.count > 1)
+          .map((cartItem) =>
+            cartItem.id === existingCartItem.id
               ? {
                   ...cartItem,
                   total: cartItem.total - cartItem.price,
@@ -201,9 +155,6 @@ class ProductProvider extends Component {
                 }
               : cartItem
           );
-        } else {
-          return test;
-        }
       }
 
       return {
@@ -289,6 +240,31 @@ class ProductProvider extends Component {
       );
     }
   };
+  openModal = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+  handleCartModal = () => {
+    this.setState((prevState) => {
+      return {
+        isCartModalOpen: !prevState.isCartModalOpen,
+      };
+    });
+  };
+  closeCartModal = () => {
+    this.setState(() => {
+      return {
+        isCartModalOpen: false,
+      };
+    });
+  };
+  closeModal = (id) => {
+    this.setState(() => {
+      return { modalOpen: false };
+    });
+  };
 
   render() {
     return (
@@ -296,8 +272,7 @@ class ProductProvider extends Component {
         value={{
           ...this.state,
           addToCart: this.addToCart,
-          openModal: this.openModal,
-          closeModal: this.closeModal,
+
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,

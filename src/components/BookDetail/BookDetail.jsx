@@ -78,62 +78,77 @@ const BookDetail = ({ book }) => {
 
           <div className="border-line" />
 
-          <section className="book-detail-details">
-            <div className="book-details-reader-wrapper">
-              <div>
-                <img src={PeopleIcon} alt="readers" />
-                <p>{data.book.number_of_purchases}</p>
+          <section>
+            <section className="book-detail-details">
+              <div className="book-details-reader-wrapper">
+                <div>
+                  <img src={PeopleIcon} alt="readers" />
+                  <p>{data.book.number_of_purchases}</p>
+                </div>
+
+                <div>
+                  <img src={LikeIcon} alt="likes" />
+
+                  <p>{data.book.likes}</p>
+                </div>
               </div>
-
               <div>
-                <img src={LikeIcon} alt="likes" />
-
-                <p>{data.book.likes}</p>
+                <p>Ratings:</p>
+                <p>
+                  <Rating
+                    //onChange={onChange}
+                    stop={5}
+                    readonly
+                    initialRating={data.book.rating}
+                    emptySymbol={<img src={EmptyStar} alt="dvd" />}
+                    fullSymbol={<img src={FullStar} alt="dkjcb" />}
+                  />
+                </p>
               </div>
-            </div>
-            <div>
-              <p>Ratings:</p>
-              <p>
-                <Rating
-                  //onChange={onChange}
-                  stop={5}
-                  readonly
-                  initialRating={data.book.rating}
-                  emptySymbol={<img src={EmptyStar} alt="dvd" />}
-                  fullSymbol={<img src={FullStar} alt="dkjcb" />}
-                />
-              </p>
-            </div>
-            <div>
-              <p>Genre:</p>
-              {data.book.genres.map((genre) => (
-                <>
-                  <p className="book-detail-genre" key={genre.id}>
-                    {genre.name}
-                  </p>
-                  {","}{" "}
-                </>
-              ))}
-            </div>
-            <div>
-              <p>Tags:</p>
-              {data.book.tags.map((tag) => (
-                <>
-                  <p className="book-detail-tag" key={tag.id}>
-                    {tag.name}
-                  </p>
-                  {","}{" "}
-                </>
-              ))}
-            </div>
-            <div>
-              <p>Publisher:</p>
+              <div>
+                <p>Genre:</p>
+                {data.book.genres.map((genre) => (
+                  <>
+                    <p className="book-detail-genre" key={genre.id}>
+                      {genre.name}
+                    </p>
+                    {","}{" "}
+                  </>
+                ))}
+              </div>
+              <div>
+                <p>Tags:</p>
+                {data.book.tags.map((tag) => (
+                  <>
+                    <p className="book-detail-tag" key={tag.id}>
+                      {tag.name}
+                    </p>
+                    {","}{" "}
+                  </>
+                ))}
+              </div>
+              <div>
+                <p>Publisher:</p>
 
-              <p>{data.book.publisher}</p>
-            </div>
-            <div>Released:</div>
+                <p>{data.book.publisher}</p>
+              </div>
+              <div>Released:</div>
+            </section>
           </section>
           <div className="border-line" />
+          <div className="book-detail-wrap-small">
+            <button className="" onClick={addBookToCart}>
+              {" "}
+              <img className="" src={CartIcon} alt="cart" />
+              <div>
+                <span> Add to Cart</span>
+                <p className="book-detail-copies">
+                  {data.book.available_copies} copies available
+                </p>
+              </div>
+              <p className="book-detail-price">${data.book.price}</p>
+            </button>
+          </div>
 
           <section className="book-detail-description">
             <p>{data.book.full_description}</p>

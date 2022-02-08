@@ -10,17 +10,8 @@ import { TailSpin } from "react-loader-spinner";
 const AllBooks = () => {
   const { data, loading, error } = useQuery(getAllBooks);
 
-  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { searchQuery } = useContext(SearchContext);
 
-  const {
-    data: datas,
-    loading: loadings,
-    error: errors,
-  } = useQuery(getBooksByFilter, {
-    variables: {
-      filter: searchQuery,
-    },
-  });
   if (loading)
     return (
       <div className="loader ">
@@ -29,7 +20,6 @@ const AllBooks = () => {
     );
 
   if (error) return <p>error occured {error.message}</p>;
-  console.log(datas);
   return (
     <section className="all-books-container">
       <h2 className="all-books-title">All Books</h2>

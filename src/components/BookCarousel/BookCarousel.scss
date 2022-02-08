@@ -20,6 +20,16 @@
   }
 }
 
+.image-hover {
+  position: absolute;
+  z-index: 2;
+  height: 330px;
+  width: 220px;
+  padding: 0 1.25rem;
+  padding-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
 .full {
   width: 100vw;
 }

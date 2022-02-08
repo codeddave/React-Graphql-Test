@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 4fr;
   padding: 0 2.5rem;
   column-gap: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .book-detail-info {
@@ -110,6 +110,43 @@
   display: block;
 }
 
+.book-detail-wrap-small {
+  display: none;
+
+  button {
+    padding: 0 1.5rem;
+    margin: 1rem 0 1.5rem 0;
+    height: 70px;
+    width: 315px;
+    color: white;
+    position: relative;
+    background-color: black;
+    border: none;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 28px;
+
+      height: 19px;
+    }
+
+    .book-detail-copies {
+      padding-top: 0rem;
+      color: #65c100;
+      font-size: 0.875rem;
+    }
+    .book-detail-price {
+      font-weight: 300;
+      font-size: 1.75rem;
+    }
+  }
+}
+
 @media screen and (max-width: 780px) {
   .book-detail-container {
     display: grid;
@@ -124,13 +161,19 @@
   .book-detail-details {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    row-gap: 1.7rem;
+    row-gap: 1rem;
   }
   .book-detail-wrap {
     display: none;
   }
+  .book-detail-wrap-small {
+    display: block;
+  }
 }
 @media screen and (max-width: 480px) {
+  .book-detail-container {
+    padding-right: 1.5rem;
+  }
   .book-detail-description {
     h3 {
       font-size: 1.75rem;

@@ -70,9 +70,12 @@ const BookCarousel = () => {
       <section className="carousel-container">
         <Slider {...settings} classNam="full">
           {data?.books.map((book) => (
-            <div className="carousel-image-container">
-              <img src={book.image_url} alt={book.title} />
-            </div>
+            <>
+              <div className="image-hover"></div>
+              <div className="carousel-image-container">
+                <img src={book.image_url} alt={book.title} />
+              </div>
+            </>
           ))}
         </Slider>
       </section>

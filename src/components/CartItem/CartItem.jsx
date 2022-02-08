@@ -5,8 +5,6 @@ import ImageThree from "../../assets/images/the-lean-startup-cover_dmwrjj.jpg";
 import "./CartItem.scss";
 import { ProductContext } from "../../context/cart";
 const CartItem = ({ book }) => {
-  console.log(book, "jhfjhvjhv");
-
   const { increment, decrement } = useContext(ProductContext);
 
   return (
