@@ -46,3 +46,10 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .cart-container {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+    width: 100%;
+  }
+}
