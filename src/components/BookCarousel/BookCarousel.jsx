@@ -58,14 +58,15 @@ const BookCarousel = () => {
     ],
     dots: true,
     infinite: true,
-    autoPlay: true,
+    autoplay: true,
+    speed: 4000,
     autoplaySpeed: 2000,
-    slidesToScroll: 1,
+    cssEase: "linear",
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
   return (
-    <section>
+    <section className="ghh">
       <div className="carousel-title-wrapper">
         <h2 className="all-books-title">Featured Books</h2>
         <div className="border-line" />
