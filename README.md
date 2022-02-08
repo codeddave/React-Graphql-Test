@@ -19,7 +19,8 @@ Cart functionality (Adding books to cart, increasing and descreasing quantity, e
 
 
 ## Possible improvement:  
-Leverage custom hook to abstract some redundant pieces of code and improve modularity
+Leverage custom hook to abstract some redundant pieces of code and improve modularity. 
+Micro interactions to improve user experience
 
 
 
