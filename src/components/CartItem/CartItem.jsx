@@ -36,7 +36,7 @@ const CartItem = ({ book }) => {
             </span>
           </div>
 
-          <p>${book.total}</p>
+          <p>${book.total.toFixed(2)}</p>
         </div>
       </div>
       <div className="border-line" />

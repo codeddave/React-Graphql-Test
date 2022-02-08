@@ -36,7 +36,7 @@ const Cart = () => {
           <div className="cart-total-wrapper">
             <span>SubTotal</span>
 
-            <p>${cartData.cartTotal}</p>
+            <p>${cartData.cartTotal.toFixed(2)}</p>
           </div>
           <button className="cart-proceed-btn">
             {" "}
