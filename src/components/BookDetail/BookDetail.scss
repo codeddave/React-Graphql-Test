@@ -1,7 +1,9 @@
 .book-detail-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  padding-left: 2.5rem;
+  padding: 0 2.5rem;
+  column-gap: 2rem;
+  padding-bottom: 1rem;
 }
 
 .book-detail-info {
@@ -58,11 +60,6 @@
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  div {
-  }
-}
-
-.book-detail-cart-icon {
 }
 
 .book-detail-add-to-cart {
@@ -72,6 +69,11 @@
   color: white;
   position: relative;
   background-color: black;
+  border: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 
   img {
     width: 28px;
@@ -79,6 +81,11 @@
     z-index: 999;
     left: 15px;
     height: 19px;
+  }
+}
+.book-detail-description {
+  p {
+    line-height: 150%;
   }
 }
 .book-detail-back-btn {
@@ -97,5 +104,36 @@
     z-index: 999;
     left: 15px;
     height: 19px;
+  }
+}
+.book-detail-wrap {
+  display: block;
+}
+
+@media screen and (max-width: 780px) {
+  .book-detail-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .book-detail-description {
+    h3 {
+      padding-top: 2rem;
+      font-size: 2.5rem;
+    }
+  }
+  .book-detail-details {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.7rem;
+  }
+  .book-detail-wrap {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .book-detail-description {
+    h3 {
+      font-size: 1.75rem;
+    }
   }
 }
