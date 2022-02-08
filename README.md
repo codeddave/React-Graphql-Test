@@ -13,5 +13,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 
+## What the page includes:
+Responsive design of the website - as close to the real website as possible.  
+Cart functionality (Adding books to cart, increasing and descreasing quantity, evaluation of the total.
+
+
+
 
 
