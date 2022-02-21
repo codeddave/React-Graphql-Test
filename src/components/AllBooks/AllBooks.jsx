@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 
 import BookCard from "../BookCard/BookCard";
 import "./AllBooks.scss";

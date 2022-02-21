@@ -14,6 +14,7 @@ import Rating from "react-rating";
 import FullStar from "../../assets/icons/full-star.svg";
 import EmptyStar from "../../assets/icons/empty-star.svg";
 import { ProductContext } from "../../context/cart";
+import dayjs from "dayjs";
 
 const BookDetail = ({ book }) => {
   const { id } = useParams();
@@ -132,7 +133,10 @@ const BookDetail = ({ book }) => {
 
                 <p>{data.book.publisher}</p>
               </div>
-              <div>Released:</div>
+              <div>
+                Released:
+                <p>{dayjs(data.book.releaseDate).format("D MMMM YYYY")}</p>
+              </div>
             </section>
           </section>
           <div className="border-line" />

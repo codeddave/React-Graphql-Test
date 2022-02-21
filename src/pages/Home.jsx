@@ -5,10 +5,10 @@ import SearchResults from "../components/SearchResults/SearchResults";
 import { SearchContext } from "../context/search";
 
 const Home = () => {
-  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { searchQuery } = useContext(SearchContext);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ position: "relative" }}>
       {searchQuery ? null : <BookCarousel />}
 
       {searchQuery ? <SearchResults /> : <AllBooks />}
