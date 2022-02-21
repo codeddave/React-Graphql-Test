@@ -13,5 +13,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 
+## What the app includes:
+Responsive design of the website - as close to the real website as possible.  
+Cart functionality (Adding books to cart, increasing and descreasing quantity, evaluation of the total).
+
+## App was built with:
+React. 
+SCSS.
+GraphQL. 
+
+
+## Possible improvements:  
+Leverage custom hook to abstract some redundant pieces of code and improve modularity. 
+Micro interactions to improve user experience
+
+
+
 
 
